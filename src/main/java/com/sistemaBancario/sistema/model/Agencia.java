@@ -18,6 +18,7 @@ public class Agencia {
 	@Column(name = "cidade_agencia")
 	private String cidadeAgencia;
 	
+	
 	public Agencia ()
 	{
 		
