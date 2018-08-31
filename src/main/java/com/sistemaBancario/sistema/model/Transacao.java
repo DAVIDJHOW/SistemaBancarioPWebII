@@ -1,5 +1,6 @@
 package com.sistemaBancario.sistema.model;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -9,7 +10,11 @@ public class Transacao {
 	@Id
 	@GeneratedValue
 	private int numero;
+	
+	@Column
 	private String data;
+	
+	@Column
 	private Double valor;
 	
 	
