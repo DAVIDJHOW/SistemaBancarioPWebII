@@ -31,13 +31,33 @@ public class ContaBancaria {
 	
 	public void depositar(double valor )
 	{
+		if(valor <=0 )
+		{
+			System.err.println("valor incorreto!");
+		}
+		
+		else
+		{
+			this.saldo = this.saldo + valor;
+		}
 		
 	}
 	
 	public void sacar(double valor)
 	{
+		if(this.saldo > 0 && this.saldo<=valor)
+		{
+			this.saldo = this.saldo - valor;
+			System.out.println("Saldo atual: "+getSaldo());
+		}
 		
+		else
+		{
+			System.err.println("saldo insuficiente!");
+		}
 	}
+	
+	
 	
 	
 	
