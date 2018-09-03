@@ -13,6 +13,9 @@ public class ContaBancaria {
 	private int numeroConta;
 	
 	@Column
+	private String titular;
+	
+	@Column
 	private Double saldo;
 	
 	
