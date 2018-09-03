@@ -2,6 +2,7 @@ package com.sistemaBancario.sistema.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Funcionario extends Pessoa {
@@ -10,6 +11,9 @@ public class Funcionario extends Pessoa {
 	private int codigo;
 	@Column 
 	private double salario;
+	
+	@OneToMany
+	private Agencia agencia;
 	
 	public int getCodigo() {
 		return codigo;
@@ -23,6 +27,16 @@ public class Funcionario extends Pessoa {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+	
+	
+	
+	public Agencia getAgencia() {
+		return agencia;
+	}
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
+	
 	
 	@Override
 	public int hashCode() {

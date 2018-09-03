@@ -26,6 +26,10 @@ public class Agencia {
 	@JoinColumn(name = "id")
 	private List<Cliente> clientes;
 	
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private List<Funcionario> funcionarios;
+	
 	
 	public Agencia ()
 	{
@@ -69,6 +73,19 @@ public class Agencia {
 
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
+	}
+
+
+	
+
+	public List<Funcionario> getFuncionarios() {
+		return funcionarios;
+	}
+
+
+
+	public void setFuncionarios(List<Funcionario> funcionarios) {
+		this.funcionarios = funcionarios;
 	}
 
 
