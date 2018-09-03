@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class ContaBancaria {
@@ -13,12 +14,21 @@ public class ContaBancaria {
 	private int numeroConta;
 	
 	@Column
-	private String titular;
-	
-	@Column
 	private Double saldo;
 	
+	@OneToMany
+	private Cliente cliente;
 	
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
 	public int getNumeroConta() {
 		return numeroConta;
 	}

@@ -1,13 +1,23 @@
 package com.sistemaBancario.sistema.model;
 
+
+
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Cliente extends Pessoa {
 	
 	@Column
 	private String RG;
+	
+	@ManyToOne
+	@JoinColumn(name = "numeroConta")
+	private List<ContaBancaria> contas;
 
 	public String getRG() {
 		return RG;
@@ -15,6 +25,26 @@ public class Cliente extends Pessoa {
 	
 	
 	
+	
+	
+
+	public List<ContaBancaria> getContas() {
+		return contas;
+	}
+
+
+
+
+
+
+	public void setContas(List<ContaBancaria> contas) {
+		this.contas = contas;
+	}
+
+
+
+
+
 
 	@Override
 	public int hashCode() {
