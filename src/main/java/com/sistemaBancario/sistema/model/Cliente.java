@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente extends Pessoa {
@@ -18,32 +19,38 @@ public class Cliente extends Pessoa {
 	@ManyToOne
 	@JoinColumn(name = "numeroConta")
 	private List<ContaBancaria> contas;
+	
+	@OneToMany
+	private Agencia agencia;
 
 	public String getRG() {
 		return RG;
 	}
-	
-	
-	
-	
-	
+
 
 	public List<ContaBancaria> getContas() {
 		return contas;
 	}
-
-
-
-
-
+	
+	
 
 	public void setContas(List<ContaBancaria> contas) {
 		this.contas = contas;
 	}
+	
+	
+	
 
 
 
+	public Agencia getAgencia() {
+		return agencia;
+	}
 
+
+	public void setAgencia(Agencia agencia) {
+		this.agencia = agencia;
+	}
 
 
 	@Override
@@ -70,6 +77,8 @@ public class Cliente extends Pessoa {
 			return false;
 		return true;
 	}
+	
+	
 	
 	
 

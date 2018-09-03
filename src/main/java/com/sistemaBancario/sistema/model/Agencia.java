@@ -1,9 +1,13 @@
 package com.sistemaBancario.sistema.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Agencia {
@@ -17,6 +21,10 @@ public class Agencia {
 	
 	@Column(name = "cidade_agencia")
 	private String cidadeAgencia;
+	
+	@ManyToOne
+	@JoinColumn(name = "id")
+	private List<Cliente> clientes;
 	
 	
 	public Agencia ()
@@ -48,6 +56,19 @@ public class Agencia {
 
 	public void setCidadeAgencia(String cidadeAgencia) {
 		this.cidadeAgencia = cidadeAgencia;
+	}
+
+
+	
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 
