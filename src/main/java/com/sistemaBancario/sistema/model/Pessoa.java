@@ -43,13 +43,14 @@ public abstract class Pessoa  {
 		this.nome = nome;
 	}
 
-	public Endereco getEndereco() {
+	public List<Endereco> getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(Endereco endereco) {
+	public void setEndereco(List<Endereco> endereco) {
 		this.endereco = endereco;
 	}
+
 	
 	
 	
