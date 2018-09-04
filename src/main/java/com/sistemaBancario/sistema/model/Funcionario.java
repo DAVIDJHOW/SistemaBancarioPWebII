@@ -24,7 +24,7 @@ public class Funcionario extends Pessoa {
 	public double getSalario() {
 		return salario;
 	}
-	public void setSalario(double salario) {
+	public void setSalario(Double salario) {
 		this.salario = salario;
 	}
 	
