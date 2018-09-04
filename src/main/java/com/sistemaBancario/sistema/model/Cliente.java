@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@PrimaryKeyJoinColumn
+@PrimaryKeyJoinColumn(name = "id")
 public class Cliente extends Pessoa {
 	
 	@Column
@@ -22,7 +22,7 @@ public class Cliente extends Pessoa {
 	@JoinColumn(name = "numeroConta")
 	private List<ContaBancaria> contas;
 	
-	@OneToMany
+	@ManyToOne
 	private Agencia agencia;
 
 	public String getRG() {

@@ -2,8 +2,10 @@ package com.sistemaBancario.sistema.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -11,12 +13,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 public class Agencia {
 	
 	@Id
 	@GeneratedValue
-	private Integer id ;
+	private Integer id;
 	
 	@Column(name = "numero_agencia")
 	private int numeroAgencia;
@@ -24,12 +28,10 @@ public class Agencia {
 	@Column(name = "cidade_agencia")
 	private String cidadeAgencia;
 	
-	@OneToMany
-	@JoinColumn(name = "id")
+	@OneToMany(mappedBy	= "cliente", fetch = FetchType.EAGER)
 	private List<Cliente> clientes;
 	
-	@OneToMany
-	@JoinColumn(name = "id")
+	@OneToMany(mappedBy	= "funcionario", fetch = FetchType.EAGER)
 	private List<Funcionario> funcionarios;
 	
 	

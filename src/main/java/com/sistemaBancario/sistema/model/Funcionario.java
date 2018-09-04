@@ -2,6 +2,8 @@ package com.sistemaBancario.sistema.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -12,7 +14,8 @@ public class Funcionario extends Pessoa {
 	@Column 
 	private Double salario;
 	
-	@OneToMany
+	@ManyToOne
+	@JoinColumn(name = "idAgencia")
 	private Agencia agencia;
 	
 	public int getCodigo() {
