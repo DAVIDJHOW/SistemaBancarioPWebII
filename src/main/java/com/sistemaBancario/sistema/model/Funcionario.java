@@ -10,7 +10,7 @@ public class Funcionario extends Pessoa {
 	@Column
 	private int codigo;
 	@Column 
-	private double salario;
+	private Double salario;
 	
 	@OneToMany
 	private Agencia agencia;
