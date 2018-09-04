@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Agencia {
@@ -22,11 +24,11 @@ public class Agencia {
 	@Column(name = "cidade_agencia")
 	private String cidadeAgencia;
 	
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name = "id")
 	private List<Cliente> clientes;
 	
-	@ManyToOne
+	@OneToMany
 	@JoinColumn(name = "id")
 	private List<Funcionario> funcionarios;
 	

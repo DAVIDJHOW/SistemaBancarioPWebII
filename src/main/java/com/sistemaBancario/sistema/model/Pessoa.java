@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import org.hibernate.engine.internal.Cascade;
@@ -24,7 +25,7 @@ public abstract class Pessoa  {
 	private String nome;
 	
 	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinColumn(name = "id")
+	@JoinTable(name = "id")
 	private List<Endereco>  endereco;
 
 	public Integer getId() {
