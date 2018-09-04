@@ -12,39 +12,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ifal.edu.pw2.demo.modelo.Pessoa;
-import ifal.edu.pw2.demo.repositorios.PessoaRepository;
+import com.sistemaBancario.sistema.model.Agencia;
+import com.sistemaBancario.sistema.repositorios.AgenciaRepository;
+
 
 @RestController
 @RequestMapping("/api/agencia")
 public class AgenciaResource {
 	
 	@Autowired
-	PessoaRepository pessoaRepository;
+	AgenciaRepository agenciaRepository;
 	
 	@GetMapping
-	public List<Pessoa> get(){
-		return pessoaRepository.findAll();
+	public List<Agencia> get(){
+		return agenciaRepository.findAll();
 	}
 	
 	@GetMapping("{id}")
-	public Pessoa get(@PathVariable("id") Integer id) {
-		return pessoaRepository.getOne(id);
+	public Agencia get(@PathVariable("id") Integer id) {
+		return agenciaRepository.getOne(id);
 	}
 	
 	@PostMapping
-	public Pessoa save(@RequestBody Pessoa pessoa) {
-		return pessoaRepository.save(pessoa);
+	public Agencia save(@RequestBody Agencia agencia) {
+		return agenciaRepository.save(agencia);
 	}
 	
 	@PutMapping
-	public Pessoa update(@RequestBody Pessoa pessoa) {
-		return pessoaRepository.save(pessoa);
+	public Agencia update(@RequestBody Agencia agencia) {
+		return agenciaRepository.save(agencia);
 	}
 	
 	@DeleteMapping("{id}")
 	public void delete(@PathVariable("id") Integer id) {
-		pessoaRepository.deleteById(id);
+		agenciaRepository.deleteById(id);
 	}
 
 }
