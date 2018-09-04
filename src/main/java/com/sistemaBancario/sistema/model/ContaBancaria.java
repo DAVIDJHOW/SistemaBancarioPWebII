@@ -11,7 +11,7 @@ public class ContaBancaria {
 	
 	@Id
 	@GeneratedValue
-	private int numeroConta;
+	private Integer numeroConta;
 	
 	@Column
 	private Double saldo;
